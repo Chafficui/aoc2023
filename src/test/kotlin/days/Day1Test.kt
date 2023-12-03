@@ -17,6 +17,12 @@ class Day1Test {
     }
 
     @org.junit.jupiter.api.Test
-    fun part2() {
+    fun part2Example() {
+        assertEquals(281, day1.part2(readFileFromTestResources("day1part2Example.txt")))
+    }
+
+    @org.junit.jupiter.api.Test
+    fun part2Input() {
+        assertEquals(54078, day1.part2(readFileFromTestResources("day1Input.txt")))
     }
 }

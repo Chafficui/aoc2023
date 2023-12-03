@@ -30,6 +30,34 @@ class Day1: Day {
     }
 
     override fun part2(text: String): Any {
-        TODO("Not yet implemented")
+        val lines = text.split("\n")
+        var sum = 0
+        for (line in lines) {
+            val (firstDigit, lastDigit) = getFirstAndLastDigits2(line)
+            val number = "$firstDigit$lastDigit".toInt()
+            println("$firstDigit + $lastDigit = $number")
+            sum += number
+        }
+        return sum
+    }
+
+    private val numbers = mapOf(
+        "one" to "o1e",
+        "two" to "t2o",
+        "three" to "t3e",
+        "four" to "4",
+        "five" to "5e",
+        "six" to "6",
+        "seven" to "7n",
+        "eight" to "e8t",
+        "nine" to "n9e",
+    )
+
+    private fun getFirstAndLastDigits2(text: String): Pair<Int, Int> {
+        val foldedLine = numbers.entries.fold(text) { acc, entry ->
+            acc.replace(entry.key, entry.value)
+        }
+        println(foldedLine)
+        return getFirstAndLastDigits(foldedLine)
     }
 }
