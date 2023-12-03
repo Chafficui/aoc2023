@@ -8,7 +8,7 @@ class Day1Test {
 
     @org.junit.jupiter.api.Test
     fun part1Example() {
-        assertEquals(142, day1.part1(readFileFromTestResources("day1Example.txt")))
+        assertEquals(142, day1.part1(readFileFromTestResources("day1part1Example.txt")))
     }
 
     @org.junit.jupiter.api.Test
