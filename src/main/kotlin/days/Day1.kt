@@ -1,7 +1,7 @@
 package days
 
 class Day1: Day {
-    override fun part1(text: String): Any {
+    override fun part1(text: String, vararg args: Any): Any {
         val lines = text.split("\n")
         var sum = 0
         for (line in lines) {
@@ -29,7 +29,7 @@ class Day1: Day {
         return char in '0'..'9'
     }
 
-    override fun part2(text: String): Any {
+    override fun part2(text: String, vararg args: Any): Any {
         val lines = text.split("\n")
         var sum = 0
         for (line in lines) {

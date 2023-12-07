@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions.*
 import utils.readFileFromTestResources
 
 class Day1Test {
-    val day1 = Day1()
+    private val day1 = Day1()
 
     @org.junit.jupiter.api.Test
     fun part1Example() {
