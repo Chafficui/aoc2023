@@ -18,11 +18,11 @@ class Day2Test {
 
     @org.junit.jupiter.api.Test
     fun part2Example() {
-        assertEquals(281, day.part2(readFileFromTestResources("day2part2Example.txt")))
+        assertEquals(2286, day.part2(readFileFromTestResources("day2part2Example.txt")))
     }
 
     @org.junit.jupiter.api.Test
     fun part2Input() {
-        assertEquals(54078, day.part2(readFileFromTestResources("day2Input.txt")))
+        assertEquals(72970, day.part2(readFileFromTestResources("day2Input.txt")))
     }
 }

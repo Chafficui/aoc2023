@@ -28,6 +28,21 @@ class Day2 : Day {
     }
 
     override fun part2(text: String, vararg args: Any): Any {
-        TODO("Not yet implemented")
+        val lines = text.split("\n")
+        var sum = 0
+        for (game in lines) {
+            val sets = game.replace("Game [0-9]*:".toRegex(), "").split(";")
+            val maxBalls = intArrayOf(0, 0, 0)
+            for (set in sets) {
+                val parts = set.split(",")
+                for (part in parts) {
+                    maxBalls[0] = if(maxBalls[0] > getAmount("red", part)) maxBalls[0] else getAmount("red", part)
+                    maxBalls[1] = if(maxBalls[1] > getAmount("green", part)) maxBalls[1] else getAmount("green", part)
+                    maxBalls[2] = if(maxBalls[2] > getAmount("blue", part)) maxBalls[2] else getAmount("blue", part)
+                }
+            }
+            sum += maxBalls[0] * maxBalls[1] * maxBalls[2]
+        }
+        return sum
     }
 }
