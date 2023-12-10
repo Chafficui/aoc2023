@@ -18,6 +18,16 @@ class Day3Test {
     }
 
     @org.junit.jupiter.api.Test
+    fun part2Example() {
+        assertEquals(467835, day.part2(readFileFromTestResources("day${index}part2Example.txt"), 2))
+    }
+
+    @org.junit.jupiter.api.Test
+    fun part2Input() {
+        assertEquals(75312571, day.part2(readFileFromTestResources("day${index}Input.txt"), 2))
+    }
+
+    @org.junit.jupiter.api.Test
     fun testPart1() {
         val day3 = Day3()
         val input = """
