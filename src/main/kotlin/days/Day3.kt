@@ -10,8 +10,8 @@ class Day3: Day {
             while (j < line.length) {
                 if (line[j].isDigit()) {
                     val wholeNumberResult = wholeNumber(lines, i, j)
-                    val partNumber = wholeNumberResult.number
-                    val lastIndex = wholeNumberResult.lastIndex
+                    val partNumber = wholeNumberResult.first
+                    val lastIndex = wholeNumberResult.second
                     if (hasAdjacentSymbol(lines, i, j, lastIndex)) {
                         sum += partNumber
                     }
@@ -41,16 +41,14 @@ class Day3: Day {
         return false
     }
 
-    private fun wholeNumber(lines: List<String>, i: Int, j: Int): WholeNumberResult {
+    private fun wholeNumber(lines: List<String>, i: Int, j: Int): Pair<Int, Int> {
         var right = j
         while (right < lines[i].length - 1 && lines[i][right + 1].isDigit()) {
             right++
         }
         val number = lines[i].substring(j, right + 1).toInt()
-        return WholeNumberResult(number, right)
+        return Pair(number, right)
     }
-
-    data class WholeNumberResult(val number: Int, val lastIndex: Int)
 
     override fun part2(text: String, vararg args: Any): Any {
         TODO("Not yet implemented")
